@@ -1,10 +1,15 @@
 package tp3;
 
-public class CourSuivie {
+import java.util.List;
+
+import tp3.TypeExamen;
+
+public class CourSuivie extends Cour {
     private Double note;
     
-    public CourSuivie( Double note){
-        this.note= note;
+    public CourSuivie(long idCour,String nom,List<String> chapitres,TypeExamen typeExamen,double note){
+        super(idCour,nom,chapitres,typeExamen);
+        this.note = note;
 
     }
 

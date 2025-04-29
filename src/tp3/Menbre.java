@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import tp3.Cour;
+
 public class Menbre extends User implements IEtudiant, IFormateur {
 
     private Cour courEnseigne;
     private CourSuivie courSuivie;
     @Override
-    public List<String> getListCourByName(String name) {
+    public List<Cour> getListCourByStudentName(String name) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -77,7 +79,7 @@ public class Menbre extends User implements IEtudiant, IFormateur {
     }
 
     @Override
-    public int getAllNotes() {
+    public List<Double> getAllNotes() {
         return 0; // ou la logique réelle si tu l’as
     }
 
