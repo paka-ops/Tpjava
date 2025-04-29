@@ -1,5 +1,6 @@
 package tp3;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -82,5 +83,14 @@ private List<Menbre> menbreDataSource = new ArrayList<Menbre>(Arrays.asList(
 
 
     
+=======
+public class Menbre implements IEtudiant,IFormateur{
+
+    @Override
+    public int getAllNotes() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+>>>>>>> 3cd8dfa798f2277b92f701a712ee343ca1b16ed4
     
 }
