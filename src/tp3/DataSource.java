@@ -1,7 +1,12 @@
+package tp3;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
-public class DataSource {
+public class DataSource extends User implements IEtudiant ,IFormateur {
+    public DataSource(String name, String mail,String password){
+        super(name, mail, password);
+    }
     private List<Menbre> menbres  = new ArrayList<>(
         Arrays.asList(
             new Menbre(
@@ -82,7 +87,7 @@ public class DataSource {
                 "pass10",
                 new Cour(110, "Cours10", Arrays.asList("Chap1", "Chap2", "Chap3"), TypeExamen.DEVOIR),
                null,
-               null,
+               null
             ),
             new Menbre(
                 "User11",
@@ -253,6 +258,63 @@ public class DataSource {
     }
     public List<Menbre> getAllMenbre(){
         return menbres;
+    }
+    public List<Menbre> getEtudiants() {
+        List<Menbre> etudiants = new ArrayList<>();
+    
+        for (Menbre menbre : menbres) {
+            if (menbre.getCourSuivie() != null) {
+                etudiants.add(menbre);
+            }
+        }
+    
+        return etudiants;
+    }
+    public List<Menbre> getFormateur(){
+        List <Menbre> formateurs = new ArrayList<>();
+
+        for(Menbre menbre : menbres){
+            if (menbre.getCourSuivie()==null) {
+                formateurs.add(menbre);
+            }
+        }
+        return formateurs;
+        
+    }
+    @Override
+    public List<Menbre> findAll() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public Menbre findEtudiantByName(String name) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public List<Double> getAllNotes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public List<Cour> getListCourByStudentName(String name) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    @Override
+    public void addFormateur(Menbre menbre) {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public void getAllFormateur() {
+        // TODO Auto-generated method stub
+        
+    }
+    @Override
+    public Menbre getFormateurByidCour(long idCour) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 
